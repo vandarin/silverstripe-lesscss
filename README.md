@@ -9,7 +9,7 @@ Simple wrapper for [lessphp](http://leafo.net/lessphp/) to integrate [LESS](http
 
 ## Requirements
 
- * Silverstripe 2.4
+ * Silverstripe :-)
 
 ## Usage
 
