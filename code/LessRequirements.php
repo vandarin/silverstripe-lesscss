@@ -13,19 +13,18 @@ class LessRequirements extends Requirements_Backend {
 	public function themedCSS($name, $module = null, $media = null) {
 		$path = SSViewer::get_theme_folder();
 		$abspath = BASE_PATH . DIRECTORY_SEPARATOR . $path;
-		$css = "/css/$name.less";
+		$less = "/css/$name.less";
+		$css = "/css/$name.css";
 		// Try LESS files first
-		if ($module && file_exists($abspath.'_'.$module.$css)) {
-			$this->css($path.'_'.$module.$css, $media);
+		if ($module && file_exists($abspath.'_'.$module.$less)) {
+			$this->css($path.'_'.$module.$less, $media);
 		}
-		else if (file_exists($abspath.$css)) {
-			$this->css($path.$css, $media);
+		else if (file_exists($abspath.$less)) {
+			$this->css($path.$less, $media);
 		}
 		else if ($module) {
-			$this->css($module.$css);
-		}
-		$css = "/css/$name.css";
-		if ($module && file_exists($abspath.'_'.$module.$css)) {
+			$this->css($module.$less);
+		} else if ($module && file_exists($abspath.'_'.$module.$css)) {
 			$this->css($path.'_'.$module.$css, $media);
 		}
 		else if (file_exists($abspath.$css)) {
