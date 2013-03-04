@@ -22,7 +22,7 @@ class LessRequirements extends Requirements_Backend {
 		else if (file_exists($abspath.$less)) {
 			$this->css($path.$less, $media);
 		}
-		else if ($module) {
+		else if ($module && file_exists($module.$less)) {
 			$this->css($module.$less);
 		} else if ($module && file_exists($abspath.'_'.$module.$css)) {
 			$this->css($path.'_'.$module.$css, $media);
